@@ -70,6 +70,6 @@ before_action :set_photo, only: [:show, :edit, :update, :destroy]
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def photo_params
-      params.require(:photo).permit(:photo)
+      params.require(:photo).permit(:photo, :user_id)
     end
 end

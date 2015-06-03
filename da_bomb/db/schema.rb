@@ -11,14 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150603001740) do
+ActiveRecord::Schema.define(version: 20150603215803) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "photos", force: :cascade do |t|
-    t.text "photo", null: false
+    t.text    "photo",   null: false
+    t.integer "user_id"
   end
+
+  add_index "photos", ["user_id"], name: "index_photos_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string "user_name", null: false
@@ -29,4 +32,5 @@ ActiveRecord::Schema.define(version: 20150603001740) do
   add_index "users", ["email"], name: "index_users_on_email", using: :btree
   add_index "users", ["user_name"], name: "index_users_on_user_name", using: :btree
 
+  add_foreign_key "photos", "users"
 end

@@ -5,6 +5,7 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
 	# List all of the users
 	def index
     @users = User.all
+    @photos = Photo.all
   end
 
 	# Show data for a user
@@ -12,7 +13,7 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
 
 	end
 
-  
+
 	
 	# GET /users/new
   def new
@@ -20,18 +21,14 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
   end
 
 	# Processes data form the user form and create a user
-	def create
-    p params
+  def create
     @user = User.new(user_params)
-
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to @user, notice: 'You are now a member of PhotApp!' }
-        format.json { render :show, status: :created, location: @user }
-      else
-        format.html { render :new }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+    if @user.save
+      log_in @user
+      flash[:success] = "Welcome to the Sample App!"
+      redirect_to @user
+    else
+      render 'new'
     end
   end
 

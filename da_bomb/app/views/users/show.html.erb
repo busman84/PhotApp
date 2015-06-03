@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<h1>Welcome to your new Profile!!!</h1>
+
 <p>
   <strong>Username:</strong>
   <%= @user.user_name %>
@@ -10,9 +12,5 @@
   <%= @user.email %>
 </p>
 
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |

@@ -2,24 +2,24 @@ class PhotosController < ApplicationController
 before_action :set_photo, only: [:show, :edit, :update, :destroy]
 
 
-	# List all of the beers
+	# List all of the photos
 	def index
 		@photos = Photo.all
 		
 	end
 
-	# Show data for one beer
+	# Show data for one photo
 	def show
 
 	end
 
-	# Displays form for creating a new beer
+	# Displays form for creating a new photo
 	def new
 		@photo = Photo.new
 		
 	end
 
-	# Processes data form the new beer form and creates a beer
+	# Processes data form the new photo form and creates a photo
 	def create
 		@photo = Photo.new(photo_params)
 
@@ -36,12 +36,12 @@ before_action :set_photo, only: [:show, :edit, :update, :destroy]
 		
 	end
 
-	# Displays form for editing an existing beer
+	# Displays form for editing an existing photo
 	def edit 
 
 	end
 
-	# Processes data form the edit beer form and updates a beer
+	# Processes data form the edit photo form and updates a photo
 	def update
 		respond_to do |format|
 	      if @photo.update(photo_params)
@@ -55,7 +55,7 @@ before_action :set_photo, only: [:show, :edit, :update, :destroy]
 		
 	end
 
-	# Deletes the beer
+	# Deletes the photo
 	def destroy
 		@photo.destroy
 		    respond_to do |format|

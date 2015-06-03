@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150603001740) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "photos", force: :cascade do |t|
     t.text "photo", null: false
   end
@@ -23,7 +26,7 @@ ActiveRecord::Schema.define(version: 20150603001740) do
     t.string "password",  null: false
   end
 
-  add_index "users", ["email"], name: "index_users_on_email"
-  add_index "users", ["user_name"], name: "index_users_on_user_name"
+  add_index "users", ["email"], name: "index_users_on_email", using: :btree
+  add_index "users", ["user_name"], name: "index_users_on_user_name", using: :btree
 
 end

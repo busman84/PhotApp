@@ -1,1 +1,9 @@
-edit.html.erb
+<h1>Upload New Photo</h1>
+
+<img src="<%= @photo.photo %>">
+
+<%= render 'form' %>
+
+
+<%= link_to 'Show', @photo %> |
+<%= link_to 'Back to Gallery', photos_path %>

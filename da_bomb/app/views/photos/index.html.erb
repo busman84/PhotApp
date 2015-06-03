@@ -1,15 +1,15 @@
 <p id="notice"><%= notice %></p>
 <h1>Gallery</h1>
 
-<h3><%= link_to 'Post a New Pic!', new_photo_path %>
-<%= link_to 'Users', users_path %></h3>
+<h3><%= link_to 'Post a New Pic!', new_photo_path %><br>
 
 
 <% @photos.each do |photo| %>
 
-<img src="<%= photo.photo %>">
-<strong><%= link_to 'Show', photo %></strong>
-<strong><%= link_to 'Edit', edit_photo_path(photo) %></strong>
+<img src="<%= photo.photo %>"><br>
+<strong><%= link_to 'Show', photo %></strong> |
+<strong><%= link_to 'Edit', edit_photo_path(photo) %></strong> |
 <strong><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></strong>
+<br>
 
 <% end %>

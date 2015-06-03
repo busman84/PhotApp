@@ -6,6 +6,15 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+<header>
+	| <%= link_to 'User Profile', @user %> |
+	<%= link_to 'Gallery', photos_path %> |
+	<%= link_to 'Sign up', new_user_path %> |
+	<%= link_to 'Login', users_path %> |
+	
+
+
+</header>
 <body>
 
 <%= yield %>

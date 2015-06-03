@@ -8,5 +8,8 @@
 <% @photos.each do |photo| %>
 
 <img src="<%= photo.photo %>">
+<strong><%= link_to 'Show', photo %></strong>
+<strong><%= link_to 'Edit', edit_photo_path(photo) %></strong>
+<strong><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></strong>
 
 <% end %>

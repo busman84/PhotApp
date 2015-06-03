@@ -1,1 +1,12 @@
-index.html.erb
+<p id="notice"><%= notice %></p>
+<h1>Gallery</h1>
+
+<h3><%= link_to 'Post a New Pic!', new_photo_path %>
+<%= link_to 'Users', users_path %></h3>
+
+
+<% @photos.each do |photo| %>
+
+<img src="<%= photo.photo %>">
+
+<% end %>

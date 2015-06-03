@@ -33,8 +33,6 @@ before_action :set_photo, only: [:show, :edit, :update, :destroy]
 	      end
 	    end
 	end
-		
-	end
 
 	# Displays form for editing an existing photo
 	def edit 
